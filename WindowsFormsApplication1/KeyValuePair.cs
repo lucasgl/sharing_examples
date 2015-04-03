@@ -9,7 +9,12 @@ namespace WindowsFormsApplication1
     public class KeyValuePair : BaseNotify
     {
         private int _key;
-
+        /// <summary>
+        /// Gets or sets the key.
+        /// </summary>
+        /// <value>
+        /// The key.
+        /// </value>
         public int Key
         {
             get { return _key; }
@@ -21,7 +26,12 @@ namespace WindowsFormsApplication1
         }
 
         private double _value;
-
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
         public double Value
         {
             get { return _value; }
