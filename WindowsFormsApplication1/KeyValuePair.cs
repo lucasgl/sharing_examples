@@ -42,5 +42,17 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private string _enum;
+
+        public string EnumValue
+        {
+            get { return _enum; }
+            set
+            {
+                _enum = value;
+                this.OnPropertyChanged("EnumValue");
+            }
+        }
+
     }
 }
