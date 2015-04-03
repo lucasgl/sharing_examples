@@ -20,9 +20,9 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private byte _value;
+        private double _value;
 
-        public byte Value
+        public double Value
         {
             get { return _value; }
             set
