@@ -43,7 +43,12 @@ namespace WindowsFormsApplication1
         }
 
         private string _enum;
-
+        /// <summary>
+        /// Gets or sets the enum value.
+        /// </summary>
+        /// <value>
+        /// The enum value.
+        /// </value>
         public string EnumValue
         {
             get { return _enum; }
