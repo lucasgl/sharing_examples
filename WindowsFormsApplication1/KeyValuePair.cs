@@ -8,7 +8,9 @@ namespace WindowsFormsApplication1
 {
     public class KeyValuePair : BaseNotify
     {
-
+        /// <summary>
+        /// Gets and sets Class of KVP
+        /// </summary>
         private string _class;
 
         public string Class

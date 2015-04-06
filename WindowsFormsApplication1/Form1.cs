@@ -14,6 +14,10 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+
+            KeyValuePair kvp = new KeyValuePair();
+            kvp.DisplayName = "int8";
+            
         }
     }
 }
