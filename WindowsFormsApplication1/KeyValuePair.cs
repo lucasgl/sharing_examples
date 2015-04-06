@@ -21,14 +21,18 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private string _displayName;
+        private enum _displayName
+        {
+            INT8,
+            INT32
+        }
 
         public string DisplayName
         {
             get { return _displayName; }
             set
             {
-                _displayName = value;
+                _displayName = Enum.Parse(typeof(_displayName), value);
                 this.OnPropertyChanged("DisplayName");
             }
         }
