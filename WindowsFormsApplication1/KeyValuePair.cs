@@ -8,29 +8,90 @@ namespace WindowsFormsApplication1
 {
     public class KeyValuePair : BaseNotify
     {
-        private int _key;
 
-        public int Key
+        private string _class;
+
+        public string Class
         {
-            get { return _key; }
-            set 
-            { 
-                _key = value;
-                OnPropertyChanged("Key");
-            }
-        }
-
-        private byte _value;
-
-        public byte Value
-        {
-            get { return _value; }
+            get { return _class; }
             set
             {
-                _value = value;
-                this.OnPropertyChanged("Value");
+                _class = value;
+                this.OnPropertyChanged("Class");
             }
         }
 
+        private string _displayName;
+
+        public string DisplayName
+        {
+            get { return _displayName; }
+            set
+            {
+                _displayName = value;
+                this.OnPropertyChanged("DisplayName");
+            }
+        }
+
+        private string _length;
+
+        public string Length
+        {
+            get { return _length; }
+            set
+            {
+                _length = value;
+                this.OnPropertyChanged("Length");
+            }
+        }
+
+        private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set
+            {
+                _ID = value;
+                this.OnPropertyChanged("ID");
+            }
+        }
+
+
+        private string _name;
+
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                this.OnPropertyChanged("Name");
+            }
+        }
+
+        private int _datatype;
+
+        public int Datatype
+        {
+            get { return _datatype; }
+            set
+            {
+                _datatype = value;
+                this.OnPropertyChanged("Datatype");
+            }
+        }
+
+        private string _settable;
+
+        public string Settable
+        {
+            get { return _settable; }
+            set
+            {
+                _settable = value;
+                this.OnPropertyChanged("Settable");
+            }
+        }
     }
 }
