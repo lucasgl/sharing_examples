@@ -7,23 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-        <local:KeyValuePairList x:Key="mockList"/>
+        <local:MockKeyItems x:Key="mockList"/>
     </UserControl.Resources>
     <StackPanel d:DataContext="{StaticResource mockList}">
-        <Button x:Name="Add" Content="Button" HorizontalAlignment="Left" Margin="10,5,5,10" VerticalAlignment="Top" Width="75" Click="Add_Click"/>
-        <ListView VerticalAlignment="Top" ItemsSource="{Binding Path=Items}">
+        <Button x:Name="Add" Content="Load KVPs/Enums" HorizontalAlignment="Left" Margin="10,5,0,10" VerticalAlignment="Top" Width="106" Click="Add_Click"/>
+        <ListView VerticalAlignment="Top" ItemsSource="{Binding Items}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Key: "/>
-                        <TextBox Text="{Binding Path=Key}"/>
-                        <TextBlock Text="Value: "/>
-                        <TextBlock Text="{Binding Path=Value}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Class: "/>
+                        <TextBlock Text="{Binding Class}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Display Name: " />
+                        <TextBlock Text="{Binding DisplayName}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Length: "/>
+                        <TextBlock Text="{Binding Length}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Key ID: "/>
+                        <TextBlock Text="{Binding ID}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Name: "/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Data Type: "/>
+                        <TextBlock Text="{Binding DataType}"/>
+                        <TextBlock Margin="5,0,0,0" Text="Settable: "/>
+                        <TextBlock Text="{Binding Settable}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
 
     </StackPanel>
 </UserControl>

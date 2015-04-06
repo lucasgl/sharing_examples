@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -8,27 +9,39 @@ namespace WindowsFormsApplication1
 {
     public class Enumeration : BaseNotify
     {
-        private string _enumName;
+        private string _name;
 
-        public string EnumName
+        public string Name
         {
-            get { return _enumName; }
+            get { return _name; }
             set
             {
-                _enumName = value;
-                this.OnPropertyChanged("EnumName");
+                _name = value;
+                this.OnPropertyChanged("Name");
             }
         }
 
-        private string _enumValue;
-
-        public string EnumValue
+        private ObservableCollection<EnumerationItem> _items;
+        /// <summary>
+        /// Gets or sets the key value pair list.
+        /// </summary>
+        /// <value>
+        /// The key value pair list.
+        /// </value>
+        public ObservableCollection<EnumerationItem> Items
         {
-            get { return _enumValue; }
+            get
+            {
+                if (_items == null)
+                {
+                    _items = new ObservableCollection<EnumerationItem>();
+                }
+                return _items;
+            }
             set
             {
-                _enumValue = value;
-                this.OnPropertyChanged("EnumValue");
+                _items = value;
+                this.OnPropertyChanged("Items");
             }
         }
 

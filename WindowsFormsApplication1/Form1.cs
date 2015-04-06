@@ -17,7 +17,10 @@ namespace WindowsFormsApplication1
 
             KeyValuePair kvp = new KeyValuePair();
             kvp.DisplayName = "int8";
-            
+
+            //if (kvp.DisplayNameEnum == KeyValuePair.DataTypeEnum.INT8)
+            //{
+            //}
         }
     }
 }

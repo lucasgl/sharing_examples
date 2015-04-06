@@ -9,10 +9,17 @@ namespace WindowsFormsApplication1
     public class KeyValuePair : BaseNotify
     {
         /// <summary>
+        /// Gets or sets the key.
+        /// </summary>
+        /// <value>
+        /// The key.
+        /// </value>
+
+        
+        private string _class;
+        /// <summary>
         /// Gets and sets Class of KVP
         /// </summary>
-        private string _class;
-
         public string Class
         {
             get { return _class; }
@@ -23,31 +30,49 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private enum DisplayNameType
-        {
-            INT8,
-            INT32
-        }
-
-        private DisplayNameType _displayName;
+        private string _displayName;
 
         public string DisplayName
-        {
-            get { return _displayName.ToString(); }
-            set
-            {
-                _displayName = (DisplayNameType)Enum.Parse(typeof(DisplayNameType), value);
-                this.OnPropertyChanged("DisplayName");
-            }
-        }
-
-        public DisplayNameType DisplayNameEnum
         {
             get { return _displayName; }
             set
             {
                 _displayName = value;
-                this.OnPropertyChanged("DisplayNameEnum");
+                this.OnPropertyChanged("DisplayName");
+            }
+        }
+
+
+        public enum DataTypeEnum
+        {
+            INT8,
+            INT16,
+            INT32,
+            BOOLEAN,
+            STRING
+        }
+
+        private DataTypeEnum _dataType;
+
+        public string DataTypeString
+        {
+            get { return _dataType.ToString(); }
+            set
+            {
+                _dataType = (DataTypeEnum)Enum.Parse(typeof(DataTypeEnum), value.ToUpper());
+                this.OnPropertyChanged("DataTypeString");
+                this.OnPropertyChanged("DataType");
+            }
+        }
+
+        public DataTypeEnum DataType
+        {
+            get { return _dataType; }
+            set
+            {
+                _dataType = value;
+                this.OnPropertyChanged("DataType");
+                this.OnPropertyChanged("DataTypeString");
             }
         }
 
@@ -88,27 +113,35 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private int _datatype;
-
-        public int Datatype
+        public enum SettableEnum
         {
-            get { return _datatype; }
+            GET,
+            SET,
+            BOTH,
+            PUBLISH
+        }
+
+        private SettableEnum _settable;
+
+        public string SettableString
+        {
+            get { return _settable.ToString(); }
             set
             {
-                _datatype = value;
-                this.OnPropertyChanged("Datatype");
+                _settable = (SettableEnum)Enum.Parse(typeof(SettableEnum), value.ToUpper());
+                this.OnPropertyChanged("SettableString");
+                this.OnPropertyChanged("Settable");
             }
         }
 
-        private string _settable;
-
-        public string Settable
+        public SettableEnum Settable
         {
             get { return _settable; }
             set
             {
                 _settable = value;
                 this.OnPropertyChanged("Settable");
+                this.OnPropertyChanged("SettableString");
             }
         }
     }
