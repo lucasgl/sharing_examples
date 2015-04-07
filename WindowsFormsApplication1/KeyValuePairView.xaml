@@ -12,7 +12,9 @@
     <StackPanel d:DataContext="{StaticResource mockList}">
         <Button x:Name="Add" Content="Load KVPs" HorizontalAlignment="Left" Margin="10,5,0,10" VerticalAlignment="Top" Width="106" Click="Add_Click"/>
         <TextBlock Text="KVP List"/>
-        <ListView VerticalAlignment="Top" ItemsSource="{Binding Items}">
+        <DataGrid ItemsSource="{Binding Path=Items}">
+        </DataGrid>
+        <!--<ListView VerticalAlignment="Top" ItemsSource="{Binding Items}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -33,8 +35,7 @@
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
-
+        </ListView>-->
 
     </StackPanel>    
 </UserControl>
