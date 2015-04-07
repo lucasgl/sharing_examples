@@ -35,8 +35,7 @@ namespace WindowsFormsApplication1
 
         public bool LoadExcel(string path, string sheet)
         {
-            //string connectionString = string.Format("provider=Microsoft.Jet.OLEDB.4.0; data source='{0}';Extended Properties='Excel 8.0;HDR=No'", path);
-            string connectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='{0}';Extended Properties=\"Excel 12.0 Macro;HDR=YES\"; ", path);
+            string connectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source='{0}';Extended Properties=\"Excel 12.0 Macro;HDR=NO\"; ", path);
             string query = string.Format("SELECT * FROM [{0}$]", sheet);
             DataTable data = new DataTable();
             KeyValuePair kvp = new KeyValuePair();
@@ -73,41 +72,14 @@ namespace WindowsFormsApplication1
                         start = true;
                     }
                 }
+                return true;
             }
 
             catch (Exception ex) 
             { 
-                System.Diagnostics.Debug.WriteLine(ex.ToString()); 
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                return false;
             }
-
-
-
-
-
-
-
-
-
-
-            kvp = new KeyValuePair();
-            kvp.Name = "abv";
-            kvp.Class = "124";
-            kvp.Length = "2";
-            kvp.DataTypeString = "int8";
-
-            this.Items.Add(kvp);
-
-            kvp = new KeyValuePair();
-            kvp.Name = "def";
-            kvp.Class = "345";
-            kvp.Length = "4";
-            kvp.DataTypeString = "int32";
-
-            this.Items.Add(kvp);
-
-
-
-            return false;
         }
 
     }

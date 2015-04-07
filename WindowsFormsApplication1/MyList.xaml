@@ -11,6 +11,11 @@
     </UserControl.Resources>
     <StackPanel d:DataContext="{StaticResource mockList}">
         <Button x:Name="Add" Content="Load KVPs/Enums" HorizontalAlignment="Left" Margin="10,5,0,10" VerticalAlignment="Top" Width="106" Click="Add_Click"/>
+        <ComboBox x:Name="comboUpperLower" HorizontalAlignment="Left" Margin="0,0,0,5" SelectionChanged="comboUpperLower_SelectionChanged"/>
+        <ComboBox x:Name="comboCycleSelect" HorizontalAlignment="Left" Margin="0,0,0,5" SelectionChanged="comboCycleSelect_SelectionChanged"/>
+        <ComboBox x:Name="comboOperation" HorizontalAlignment="Left" Margin="0,0,0,5" SelectionChanged="comboOperation_SelectionChanged"/>
+        <Button x:Name="Update" Content="Update Values" HorizontalAlignment="Left" Margin="10,5,0,10" VerticalAlignment="Top" Width="106" Click="Update_Click"/>
+        <TextBlock x:Name="textBlockValues" Text="TextBlock"/>
         <ListView VerticalAlignment="Top" ItemsSource="{Binding Items}">
             <ListView.ItemTemplate>
                 <DataTemplate>
