@@ -9,9 +9,9 @@
     <UserControl.Resources>
         <local:MockKeyItems x:Key="mockList"/>
     </UserControl.Resources>
-    <StackPanel d:DataContext="{StaticResource mockList}">
-        <Button x:Name="Add" Content="Load KVPs" HorizontalAlignment="Left" Margin="10,5,0,10" VerticalAlignment="Top" Width="106" Click="Add_Click"/>
-        <TextBlock Text="KVP List"/>
+    <DockPanel LastChildFill="True" d:DataContext="{StaticResource mockList}">
+        <Button DockPanel.Dock="Top" x:Name="Add" Content="Load KVPs" HorizontalAlignment="Left" Margin="10,5,0,10" VerticalAlignment="Top" Width="106" Click="Add_Click"/>
+        <TextBlock DockPanel.Dock="Top" Text="KVP List"/>
         <DataGrid ItemsSource="{Binding Path=Items}">
         </DataGrid>
         <!--<ListView VerticalAlignment="Top" ItemsSource="{Binding Items}">
@@ -37,5 +37,5 @@
             </ListView.ItemTemplate>
         </ListView>-->
 
-    </StackPanel>    
+    </DockPanel>    
 </UserControl>
