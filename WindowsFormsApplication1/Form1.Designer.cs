@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.myList1 = new WindowsFormsApplication1.MyList();
+            this.myList1 = new WindowsFormsApplication1.KeyValuePairView();
             this.SuspendLayout();
             // 
             // elementHost1
@@ -57,7 +57,7 @@
         #endregion
 
         private System.Windows.Forms.Integration.ElementHost elementHost1;
-        private MyList myList1;
+        private KeyValuePairView myList1;
     }
 }
 

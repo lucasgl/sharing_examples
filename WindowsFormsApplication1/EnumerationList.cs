@@ -35,6 +35,23 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private Enumeration _selectedEnum;
+        /// <summary>
+        /// Gets or sets the selected enumeration.
+        /// </summary>
+        /// <value>
+        /// The selected enumeration.
+        /// </value>
+        public Enumeration SelectedEnumeration
+        {
+            get { return _selectedEnum; }
+            set
+            {
+                _selectedEnum = value;
+                this.OnPropertyChanged("SelectedEnumeration");
+            }
+        }
+
 
         public bool LoadExcel(string path, string sheet)
         {

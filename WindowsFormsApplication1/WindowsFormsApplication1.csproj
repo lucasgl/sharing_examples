@@ -54,6 +54,9 @@
     <Compile Include="EnumerationList.cs" />
     <Compile Include="Enumeration.cs" />
     <Compile Include="EnumerationItem.cs" />
+    <Compile Include="EnumerationListView.xaml.cs">
+      <DependentUpon>EnumerationListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,8 +66,8 @@
     <Compile Include="KeyValuePair.cs" />
     <Compile Include="KeyValuePairList.cs" />
     <Compile Include="MockKeyItems.cs" />
-    <Compile Include="MyList.xaml.cs">
-      <DependentUpon>MyList.xaml</DependentUpon>
+    <Compile Include="KeyValuePairView.xaml.cs">
+      <DependentUpon>KeyValuePairView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +83,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,7 +95,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MyList.xaml">
+    <Page Include="EnumerationListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KeyValuePairView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
