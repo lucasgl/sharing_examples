@@ -108,6 +108,10 @@ namespace WindowsFormsApplication1
                         }
                     }
                 }
+                if (Items.Count > 0)
+                {
+                    SelectedEnumeration = Items.First();
+                }
                 return true;
             }
 
