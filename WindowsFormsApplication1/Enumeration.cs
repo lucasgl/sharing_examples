@@ -46,5 +46,10 @@ namespace WindowsFormsApplication1
                 this.OnPropertyChanged("Items");
             }
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
