@@ -100,6 +100,42 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private int _alternate = 0;
+        /// <summary>
+        /// Gets or sets the alternate.
+        /// Used to alternate style between key value pairs with same alternate value in a row.
+        /// </summary>
+        /// <value>
+        /// The alternate.
+        /// </value>
+        public int Alternate
+        {
+            get { return _alternate; }
+            set
+            {
+                _alternate = value % MaxAlternate;
+                this.OnPropertyChanged("Alternate");
+            }
+        }
+
+        private int _maxAlternate = 2;
+        /// <summary>
+        /// Gets or sets the maximum alternate number.
+        /// Set 2 by default (i.e. allows 0 and 1 on the Alternate property).
+        /// </summary>
+        /// <value>
+        /// The maximum alternate.
+        /// </value>
+        public int MaxAlternate
+        {
+            get { return _maxAlternate; }
+            set
+            {
+                _maxAlternate = value;
+                this.OnPropertyChanged("MaxAlternate");
+            }
+        }
+
 
         private string _name;
 

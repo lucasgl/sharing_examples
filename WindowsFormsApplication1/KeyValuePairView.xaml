@@ -8,11 +8,26 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <local:MockKeyItems x:Key="mockList"/>
+        <Style TargetType="DataGridRow">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Alternate}" Value="0">
+                    <Setter Property="Background" Value="LightBlue" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Alternate}" Value="1">
+                    <Setter Property="Background" Value="GreenYellow" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
     <DockPanel LastChildFill="True" d:DataContext="{StaticResource mockList}">
         <Button DockPanel.Dock="Top" x:Name="Add" Content="Load KVPs" HorizontalAlignment="Left" Margin="10,5,0,10" VerticalAlignment="Top" Width="106" Click="Add_Click"/>
         <TextBlock DockPanel.Dock="Top" Text="KVP List"/>
-        <DataGrid ItemsSource="{Binding Path=Items}">
+        <DataGrid ItemsSource="{Binding Path=Items}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Class" Binding="{Binding Class}">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+            </DataGrid.Columns>
         </DataGrid>
         <!--<ListView VerticalAlignment="Top" ItemsSource="{Binding Items}">
             <ListView.ItemTemplate>
