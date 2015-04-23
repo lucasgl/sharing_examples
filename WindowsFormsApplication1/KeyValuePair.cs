@@ -31,7 +31,12 @@ namespace WindowsFormsApplication1
         }
 
         private string _displayName;
-
+        /// <summary>
+        /// Gets or sets the display name.
+        /// </summary>
+        /// <value>
+        /// The display name.
+        /// </value>
         public string DisplayName
         {
             get { return _displayName; }
